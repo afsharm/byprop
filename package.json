@@ -1,0 +1,29 @@
+{
+  "name": "byprop",
+  "version": "1.0.0",
+  "description": "A PERN project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "start:server": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afsharm/byprop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afsharm/byprop/issues"
+  },
+  "homepage": "https://github.com/afsharm/byprop#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
