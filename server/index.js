@@ -1,9 +1,9 @@
-import http from "http";
+import http from 'http';
 import express from "express";
 import logger from "morgan";
 // routes
 import indexRouter from "./routes/index.js";
-import userRouter from "./routes/user.js"
+import userRouter from "./routes/user.js";
 
 const app = express();
 
