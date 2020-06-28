@@ -4,7 +4,10 @@ import makeValidation from '@withvoid/make-validation';
 //import { USER_TYPES } from '../models/User.js';
 
 export default {
-    onGetAllUsers: async (req, res) => { },
+    onGetAllUsers: async (req, res) => { 
+      return res.status(200).json({success: true, items: [{name: "jack"}]});
+
+    },
 
     onGetUserById: async (req, res) => { },
 
