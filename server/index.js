@@ -8,7 +8,7 @@ import userRouter from "./routes/user.js";
 const app = express();
 
 /** Get port from environment and store in Express. */
-const port = process.env.PORT || "3004";
+const port = process.env.PORT || "3007";
 app.set("port", port);
 
 app.use(logger("dev"));

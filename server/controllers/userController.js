@@ -3,10 +3,56 @@ import makeValidation from '@withvoid/make-validation';
 // models
 //import { USER_TYPES } from '../models/User.js';
 
-export default {
-    onGetAllUsers: async (req, res) => { 
-      return res.status(200).json({success: true, items: [{name: "jack"}]});
+import Pool from 'pg';
 
+// const pool = new Pool({
+//   user: 'postgres',
+//   host: 'localhost',
+//   database: 'postgres',
+//   password: 'password',
+//   port: 5432,
+// })
+
+
+export default {
+
+  onGetAllUsers: async (req, res) => { 
+      console.log('before pool');
+
+      const config = {
+        user: 'postgres',
+        host: 'localhost',
+        database: 'postgres',
+        password: '123',
+        port: 5432,
+      };
+
+      const pool = new Pool.Pool(config);
+      // const pool = new Pool({
+      //   user: 'postgres',
+      //   host: 'localhost',
+      //   database: 'postgres',
+      //   password: '123',
+      //   port: 5432,
+      // });
+
+      // pool.user =  'postgres';
+      // pool.host= 'localhost';
+      // pool.database= 'postgres';
+      // pool.password= '123';
+      // pool.port= 5432;
+
+
+      pool.query('SELECT * FROM apar ORDER BY id ASC', (error, results) => {
+        if (error) {
+          throw error
+        }
+        console.log('inside');
+        //response.status(200).json(results.rows)
+        return res.status(200).json(results)
+      })
+    
+      //return res.status(200).json({success: true, items: [{name: "jack"},{name: "jane"}]});
     },
 
     onGetUserById: async (req, res) => { },
