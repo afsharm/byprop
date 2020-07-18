@@ -59,15 +59,18 @@ export default {
 
     onCreateUser: async (req, res) => { 
         try {
+          console.log('onCreateUser');
             const validation = makeValidation(types => ({
               payload: req.body,
               checks: {
                 firstName: { type: types.string },
                 lastName: { type: types.string },
-                type: { type: types.enum, options: { enum: USER_TYPES } },
+                //type: { type: types.enum, options: { enum: USER_TYPES } },
               }
             }));
+            console.log('validation1');
             if (!validation.success) return res.status(400).json(validation);
+            console.log('validation2');
       
             const { firstName, lastName, type } = req.body;
             //const user = await UserModel.createUser(firstName, lastName, type);
