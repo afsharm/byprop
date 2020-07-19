@@ -14,12 +14,9 @@ export default {
 
       const pool = new Pool.Pool(config);
    
-      pool.query('SELECT * FROM apar ORDER BY id ASC', (error, results) => {
-        if (error) {
-          throw error
-        }
+      const results = await pool.query('SELECT * FROM apar ORDER BY id ASC');
         console.log('inside ' + results.rows.length);
         return results.rows;
-      })
+      
     },
   }

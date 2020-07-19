@@ -3,9 +3,10 @@ import userModel from '../models/userModel.js';
 
 export default {
   onGetAllUsers: async (req, res) => { 
-          var results = userModel.getAll();
-            console.log('results ' + results);
-            return res.status(200).json(results.rows)
+          userModel.getAll().then(results => {
+            console.log('results ' + results.length);
+            return res.status(200).json(results)
+        });
     },
 
     onGetUserById: async (req, res) => { },
