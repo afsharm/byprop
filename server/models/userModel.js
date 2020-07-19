@@ -1,18 +1,11 @@
 import Pool from 'pg';
+import config from '../queries.js';
 
 export default {
   getAll: async () => { 
       console.log('before pool');
 
-      const config = {
-        user: 'postgres',
-        host: 'localhost',
-        database: 'postgres',
-        password: '123',
-        port: 5432,
-      };
-
-      const pool = new Pool.Pool(config);
+      const pool = new Pool.Pool(config.db);
    
       const results = await pool.query('SELECT * FROM apar ORDER BY id ASC');
         console.log('inside ' + results.rows.length);
@@ -23,15 +16,7 @@ export default {
     createItem: async (firstName, lastName) => {
       console.log('createItem');
 
-      const config = {
-        user: 'postgres',
-        host: 'localhost',
-        database: 'postgres',
-        password: '123',
-        port: 5432,
-      };
-
-      const pool = new Pool.Pool(config);
+      const pool = new Pool.Pool(config.db);
    
       var result = await pool.query(
         'INSERT into apar (id, firstname, lastname) VALUES($1, $2, $3) RETURNING id', 
