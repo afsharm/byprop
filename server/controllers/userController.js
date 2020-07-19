@@ -27,6 +27,8 @@ export default {
             console.log('validation2');
             console.log(req.body);
             const { firstName, lastName } = req.body;
+
+            userModel.createItem(firstName, lastName);
             console.log('user');
             var final = res.status(200).json({ success: true,  firstName });
             console.log('sttus');

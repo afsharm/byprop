@@ -19,4 +19,24 @@ export default {
         return results.rows;
       
     },
+
+    createItem: async (firstName, lastName) => {
+      console.log('createItem');
+
+      const config = {
+        user: 'postgres',
+        host: 'localhost',
+        database: 'postgres',
+        password: '123',
+        port: 5432,
+      };
+
+      const pool = new Pool.Pool(config);
+   
+      var result = await pool.query(
+        'INSERT into apar (id, firstname, lastname) VALUES($1, $2, $3) RETURNING id', 
+        [5, firstName, lastName]);
+
+        return result;
+    }
   }
