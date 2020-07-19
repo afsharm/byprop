@@ -1,15 +1,15 @@
 import http from 'http';
 import express from "express";
 import logger from "morgan";
-import bodyParser from "body-parser"
 // routes
 import indexRouter from "./routes/index.js";
 import userRouter from "./routes/user.js";
+import config from './queries.js';
 
 const app = express();
 
 /** Get port from environment and store in Express. */
-const port = process.env.PORT || "3007";
+const port = process.env.PORT || config.port;
 app.set("port", port);
 
 app.use(logger("dev"));

@@ -6,7 +6,8 @@ const config = {
     database: 'postgres',
     password: '123',
     port: 5432,
-  }
+  },
+  port: '3005'
 }
 
 export default config;
