@@ -2,7 +2,7 @@
 import makeValidation from '@withvoid/make-validation';
 // models
 //import { USER_TYPES } from '../models/User.js';
-
+import bodyParser from 'body-parser';
 import Pool from 'pg';
 
 // const pool = new Pool({
@@ -71,10 +71,12 @@ export default {
             console.log('validation1');
             if (!validation.success) return res.status(400).json(validation);
             console.log('validation2');
-      
-            const { firstName, lastName, type } = req.body;
-            //const user = await UserModel.createUser(firstName, lastName, type);
-            return res.status(200).json({ success: true, user });
+            console.log(req.body);
+            const { firstName, lastName } = req.body;
+            console.log('user');
+            var final = res.status(200).json({ success: true,  firstName });
+            console.log('sttus');
+            return final;
           } catch (error) {
             return res.status(500).json({ success: false, error: error })
           }

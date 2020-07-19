@@ -1,6 +1,7 @@
 import http from 'http';
 import express from "express";
 import logger from "morgan";
+import bodyParser from "body-parser"
 // routes
 import indexRouter from "./routes/index.js";
 import userRouter from "./routes/user.js";
@@ -12,6 +13,10 @@ const port = process.env.PORT || "3007";
 app.set("port", port);
 
 app.use(logger("dev"));
+// app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+//   extended: true
+// })); 
+// app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
