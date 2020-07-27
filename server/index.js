@@ -1,8 +1,8 @@
 import http from 'http';
 import express from "express";
 import logger from "morgan";
-import indexRouter from "./routes/index.js";
-import userRouter from "./routes/user.js";
+import indexRouter from "./routes/indexRouter.js";
+import userRouter from "./routes/userRouter.js";
 import draftRouter from "./routes/draftRouter.js";
 import config from './queries.js';
 
