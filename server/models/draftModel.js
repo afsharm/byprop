@@ -11,15 +11,15 @@ export default {
   },
 
   createItem: async (code, document_number, status) => {
-    console.log('createItem');
+      console.log('createItem');
 
-    const pool = new Pool.Pool(config.db);
-    var new_uuid = uuidv4();
-    console.log('uuid: ' + new_uuid);
-    var result = await pool.query(
-      'INSERT into drafts (id, code, document_number, status) VALUES($1, $2, $3, $4) RETURNING id',
-      [new_uuid, code, document_number, status]);
+      const pool = new Pool.Pool(config.db);
+      var new_uuid = uuidv4();
+      console.log('uuid: ' + new_uuid);
+      var result = await pool.query(
+        'INSERT into drafts (id, code, document_number, status) VALUES($1, $2, $3, $4) RETURNING id',
+        [new_uuid, code, document_number, status]);
 
-    return result;
+      return result;
   }
 }

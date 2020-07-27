@@ -26,13 +26,15 @@ export default {
             console.log(req.body);
             const { code, document_number, status } = req.body;
 
-            draftModel.createItem(code, document_number, status);
+            await draftModel.createItem(code, document_number, status);
             console.log('item');
             var final = res.status(200).json({ success: true,  code });
             console.log('sttus');
             return final;
           } catch (error) {
-            return res.status(500).json({ success: false, error: error })
+            console.log(error);
+            console.log(error.message);
+            return res.status(500).json({ success: false, error: error.message })
           }
     },
   }
