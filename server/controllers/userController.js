@@ -14,6 +14,8 @@ export default {
     onCreateUser: async (req, res) => { 
         try {
           console.log('onCreateUser');
+          console.log(req.headers);
+          console.log(req.body);
             const validation = makeValidation(types => ({
               payload: req.body,
               checks: {
