@@ -1,0 +1,10 @@
+curl "http://localhost:3005/draft" -H "Content-Type: application/json" -d "{\"code\": \"joe\",\"document_number\": \"123\", \"status\": \"one\"}"
+D:\Program Files\PostgreSQL\10\scripts>runpsql.bat
+pg_dump -U postgres -W -F t dvdrental > c:\pgbackup\dvdrental.tar
+pg_dump -U postgres -s postgres > d:\schema.sql
+
+postgres
+========
+\d
+\d drafts
+select enum_range(null::draft_status); 
