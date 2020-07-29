@@ -25,12 +25,13 @@ export default {
 
   countAgentMainDrafts: async(agentMainId, agencyId, status, date) => {
     const pool = new Pool.Pool(config.db);
-
+    console.log('start');
     var result = await pool.query(
-      '',
-      [agentMainId, agencyId, status, date]
+      'select count(*) from drafts'
+      //,[agentMainId, agencyId, status, date]
     );
-
-    return result;
+    
+    console.log('returned from db');
+    return result.rows[0].count;
   }
 }
