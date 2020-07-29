@@ -21,5 +21,16 @@ export default {
       [new_uuid, code, document_number, status]);
 
     return result;
+  },
+
+  countAgentMainDrafts: async(agentMainId, agencyId, status, date) => {
+    const pool = new Pool.Pool(config.db);
+
+    var result = await pool.query(
+      '',
+      [agentMainId, agencyId, status, date]
+    );
+
+    return result;
   }
 }

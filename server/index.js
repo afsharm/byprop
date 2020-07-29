@@ -4,6 +4,7 @@ import logger from "morgan";
 import indexRouter from "./routes/indexRouter.js";
 import userRouter from "./routes/userRouter.js";
 import draftRouter from "./routes/draftRouter.js";
+import loadRouter from "./routes/loadRouter.js";
 import config from './queries.js';
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", indexRouter);
 app.use("/user", userRouter);
 app.use("/draft", draftRouter);
+app.use("/load", loadRouter)
 
 /** catch 404 and forward to error handler */
 app.use('*', (req, res) => {
