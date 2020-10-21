@@ -4,6 +4,7 @@ import load from '../controllers/loadController.js';
 const router = express.Router();
 
 router
-  .get('/todayStat', load.onGetAgentMainTodayStatistics)
+.get('/', load.onGetAll)
+.post('/', load.onCreate)
 
 export default router;
