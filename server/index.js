@@ -6,6 +6,7 @@ import userRouter from "./routes/userRouter.js";
 import draftRouter from "./routes/draftRouter.js";
 import loadRouter from "./routes/loadRouter.js";
 import config from './queries.js';
+import commonRouter from "./routes/commonRouter.js";
 
 const app = express();
 
@@ -20,7 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/v1/", indexRouter);
 app.use("/v1/user", userRouter);
 app.use("/v1/draft", draftRouter);
-app.use("/v1/load", loadRouter)
+app.use("/v1/load", loadRouter);
+app.use("/v1/common", commonRouter);
 
 /** catch 404 and forward to error handler */
 app.use('*', (req, res) => {
