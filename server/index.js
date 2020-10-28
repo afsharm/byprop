@@ -17,10 +17,10 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/", indexRouter);
-app.use("/user", userRouter);
-app.use("/draft", draftRouter);
-app.use("/load", loadRouter)
+app.use("/v1/", indexRouter);
+app.use("/v1/user", userRouter);
+app.use("/v1/draft", draftRouter);
+app.use("/v1/load", loadRouter)
 
 /** catch 404 and forward to error handler */
 app.use('*', (req, res) => {
