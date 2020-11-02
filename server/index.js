@@ -7,6 +7,7 @@ import draftRouter from "./routes/draftRouter.js";
 import loadRouter from "./routes/loadRouter.js";
 import config from './queries.js';
 import commonRouter from "./routes/commonRouter.js";
+import cors from "cors";
 
 const app = express();
 
@@ -14,6 +15,7 @@ const app = express();
 const port = process.env.PORT || config.port;
 app.set("port", port);
 
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
