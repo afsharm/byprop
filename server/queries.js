@@ -1,12 +1,6 @@
 
 const config = {
-  db: {
-    user: 'postgres',
-    host: 'localhost',
-    database: 'byprop',
-    password: '123',
-    port: 5432,
-  },
+  db: process.env.DATABASE_URL,
   port: '3005'
 }
 

@@ -40,3 +40,5 @@ The command *pwd* shows you where you are
 
 curl http://localhost:3005/load
 
+
+export DATABASE_URL=postgresql://postgres:123@localhost:5432/byprop
