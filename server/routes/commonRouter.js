@@ -6,5 +6,6 @@ const router = express.Router();
 router
 .get('/province', load.onProvince)
 .get('/county', load.onCounty)
+.get('/allcounty', load.onAllCounty)
 
 export default router;

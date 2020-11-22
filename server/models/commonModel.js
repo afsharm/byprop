@@ -22,5 +22,11 @@ export default {
     console.log('inside ' + results.rows.length);
 
     return results.rows;
+  },
+
+  getAllCounty: async () => {
+    const pool = new Pool.Pool(config.db);
+    const results = await pool.query('SELECT id, name, province FROM county ORDER BY name');
+    return results.rows;
   }  
 }
