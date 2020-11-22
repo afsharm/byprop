@@ -18,7 +18,7 @@ sudo su - postgres
 
 pg_dump postgres > postgres_db.bak
 
-pg_dump -d byprop -t table > table.sql
+pg_dump -Fc --no-acl --no-owner --dbname byprop -t province > province.sql
 
 psql db_development < postgres_db.dump
 
