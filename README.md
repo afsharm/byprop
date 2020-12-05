@@ -1,19 +1,20 @@
 # byprop
+
 A PERN project
 
-**More info**
+## More info
 
 https://dev.to/afsharm/trying-node-js-hi3
 
-**Links**
+## Links
 
 https://github.com/ahmadazizi/iran-cities
 
 https://github.com/arastu/iran
 
+## Useful synatx
 
-**Useful synatx**
-
+~~~bash
 sudo su - postgres
 
 pg_dump postgres > postgres_db.bak
@@ -22,9 +23,10 @@ pg_dump -Fc --no-acl --no-owner --dbname byprop -t province -t county > pro-coun
 
 psql db_development < postgres_db.dump
 
+pg_restore -h localhost -p 5432 -U postgres -d wps -v pro-county.sql
+~~~
 
-
-
+~~~sql
 CREATE TABLE mytable
 
 (
@@ -34,12 +36,14 @@ CREATE TABLE mytable
     name varchar(50) NOT NULL
 
 );
-
+~~~
 
 The command *pwd* shows you where you are
 
+~~~bash
 curl http://localhost:3005/load
 
 
 export DATABASE_URL=postgresql://postgres:123@localhost:5432/byprop
 heroku pg:backups:restore https://raw.githubusercontent.com/afsharm/byprop/master/misc/province.sql DATABASE_URL -a byprop
+~~~
