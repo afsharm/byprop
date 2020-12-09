@@ -45,5 +45,5 @@ curl http://localhost:3005/load
 
 
 export DATABASE_URL=postgresql://postgres:123@localhost:5432/byprop
-heroku pg:backups:restore https://raw.githubusercontent.com/afsharm/byprop/master/misc/province.sql DATABASE_URL -a byprop
+heroku pg:backups:restore https://raw.githubusercontent.com/afsharm/byprop/master/misc/pro-county.sql DATABASE_URL -a byprop
 ~~~
